@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "engines": {
-    "npm": "22.14.0"
+    "npm": "22.x"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
