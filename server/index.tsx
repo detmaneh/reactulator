@@ -7,6 +7,11 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(express.static(path.resolve("/", '../ui/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve("/", '../ui/build', 'index.html'));
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
