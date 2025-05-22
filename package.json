@@ -14,7 +14,7 @@
   "type": "commonjs",
   "engines": {
     "npm": "11.3.0",
-    "node":"22.14.0"
+    "node": "22.14.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
