@@ -50,7 +50,7 @@ app.post("/perc", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ message: "CalcServer Conected" });
+  res.json({ message: `CalcServer Conected on ${PORT}` });
 });
 
 app.listen(PORT, () => {
