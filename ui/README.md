@@ -1,3 +1,7 @@
+# HEROKU DEPLOYMENT 
+
+app is currently runnimg at https://reactulator-b8f0f84bd55a.herokuapp.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
