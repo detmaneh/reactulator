@@ -1,4 +1,3 @@
-// server/index.js
 const path = require('path');
 const express = require("express");
 const bodyParser = require('body-parser');
@@ -7,16 +6,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// app.use(express.static(path.join(__dirname, '..', 'ui', 'build')));
-
-// app.get(/(.*)/, (req, res) => {
-//   res.sendFile(path.join(__dirname, '..', 'ui', 'build', 'index.html'));
-// });
-
 
 app.use(express.static(path.join(__dirname, 'ui/build')));
 
-// Handle React routing, return all requests to React app
 app.get(/(.*)/, function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/build', 'index.html'));
 });
@@ -69,26 +61,9 @@ app.listen(PORT, () => {
 });
 
 
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(__dirname));
-
-
-app.use(express.static(path.join(__dirname, '/ui/build')));
-
-app.use(express.static(path.resolve(__dirname, '/ui/build')));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// app.get(/(.*)/, (req, res) => {
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '/ui/build', 'index.html'));
-// });
-
-// app.get("/", (req, res) => {
-//   res.json({ message: `CalcServer Conected on ${PORT}` });
-// });
+// app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(__dirname));
 
 app.use((req, res, next) => {
   res.status(404).send('Sorry, the requested resource was not found.');
