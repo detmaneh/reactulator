@@ -49,10 +49,6 @@ app.post("/perc", (req, res) => {
   res.json({ message: response });
 });
 
-app.get("/", (req, res) => {
-  res.json({ message: `CalcServer Conected on ${PORT}` });
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
@@ -68,6 +64,10 @@ app.use(express.static(path.join(__dirname, '/ui/build')));
 app.use(express.static(path.resolve(__dirname, '/ui/build')));
 app.get(/(.*)/, (req, res) => {
   res.sendFile(path.resolve(__dirname, '/ui/build', 'index.html'));
+});
+
+app.get("/", (req, res) => {
+  res.json({ message: `CalcServer Conected on ${PORT}` });
 });
 
 app.use((req, res, next) => {
