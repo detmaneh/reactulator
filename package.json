@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.tsx",
-    "build": "cd ui && npm install && npm run build"
+    "build": "cd ui && npm install && npm run build",
+    "serves": "cd ui && npm install && npm run build &&  serve -s build"
   },
   "keywords": [],
   "author": "",
