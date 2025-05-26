@@ -7,6 +7,13 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, '..', 'ui', 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'ui', 'build', 'index.html'));
+});
+
+
 const getDigitNumber = (value) => {
   if (value % 1 !== 0) {
     return value.toFixed(4);
