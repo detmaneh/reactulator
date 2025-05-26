@@ -7,12 +7,20 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '..', 'ui', 'build')));
+// app.use(express.static(path.join(__dirname, '..', 'ui', 'build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'ui', 'build', 'index.html'));
+// app.get(/(.*)/, (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'ui', 'build', 'index.html'));
+// });
+
+
+app.use(express.static(path.join(__dirname, 'ui/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/build', 'index.html'));
 });
-
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 const getDigitNumber = (value) => {
   if (value % 1 !== 0) {
