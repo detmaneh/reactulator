@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'ui/build')));
 
 // Handle React routing, return all requests to React app
-app.get('*', function (req, res) {
+app.get(/(.*)/, function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/build', 'index.html'));
 });
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
